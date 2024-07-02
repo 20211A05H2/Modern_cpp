@@ -1,0 +1,14 @@
+aggregation : aggregated class (Employee) does not control the lifetime of the aggregation class(project)
+
+class Employee:
+    - id
+    - name
+    - project
+class Project:
+    - id
+    - Teame size
+    - budget
+
+g++ --std=c++11
+
+

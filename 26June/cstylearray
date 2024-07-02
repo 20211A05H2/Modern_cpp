@@ -1,0 +1,20 @@
+
+for Consecutive elements
+from base location to last elements location(size-1)
+     -access address+(location*size of each element)
+
+
+
+for Linked list
+
+   from first location:
+      -defference to reach the element,access it
+      -Now ,read the address of next element
+      -if next pointer is nullptr,break
+      -else,repeat steps
+
+universal algorithm
+1.for every element fetched from the container
+    (Dont give a damn how you get it),
+     -access the element and do something with it
+

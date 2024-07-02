@@ -1,0 +1,65 @@
+/*
+  3 styles of programming
+    -structure oriented--blocks of code
+    -object oriented --most impportant thing is Dynamic dispatch
+    -functional ---user choose data
+
+
+
+
+
+
+    Rules for Functional programming
+       1.treat functions as if they are object
+       2. if possible, maintain purity of function
+       3.functiona as categories based on what they do 
+         ex:
+         the function that transforms x1,x2,x3
+         into y1,y2,y3 based on mapping logic is called a "map Function"
+              
+               data={1,2,3,4,5}
+               fn=(n)-->n*n
+
+
+               result=1,4,9,16,25
+
+               in map function,number of inputs and outputs are same
+
+               [101 27000]  [102 900000] [103 80000]
+
+               fn=(e)->salary*0.0f//is tax
+               result=2700,9000,8000
+
+               ex:2
+              a function that removes/identifies from the input ,a select number of values based on a arietern(fister function)
+
+              data=[1,2,3,4,5]
+              fn=n->n%2==0
+              result:[2,4]//only 2 input values satisfy the condition(predicate)
+
+
+              ex3:Reduction or cummulative function
+              a function that cummulates/gaters/aggregates multiple input values into one,final,singlar output value
+
+                    eg:
+                    data={1,2,3,4,5}
+                    fn=(x,y)->x+y
+                    
+                    
+                    result=15
+
+
+                    total 1   2   3   4   5  
+                        0
+                            1
+                                3
+                                    6
+                                        10
+                                            15
+
+
+
+
+
+                         
+*/
