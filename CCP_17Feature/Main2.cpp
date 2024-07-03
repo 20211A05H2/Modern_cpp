@@ -7,13 +7,12 @@
     Heap data on the heap
     dont use variant for "functional polymorphisim"
  */
-using vrType = std::variant<Businessowner*, Employee*>;
 void Display(const vrType& v)
 {
     std::visit([](auto &&val)
                { std::cout << *val << "\n"; }, v);
 }
-
+using vrType = std::variant<Businessowner*, Employee*>;
 int main()
 {
     vrType v;
