@@ -11,13 +11,13 @@ int main()
   Operations::Jointhreads();
 
   //execute serial functions
-  static std::optional<unsigned int> result1=Operations::FindSeatCountbyId("xyz123");
+   std::optional<unsigned int> result1=Operations::FindSeatCountbyId("xyz123");
   if(result1.has_value())
   {
     std::cout<<"seat count for id is:"<<result1.value();
   }
 
-  static std::optional<vrType> result2=Operations::ReturnMatchingInstances("ABC123");
+ std::optional<vrType> result2=Operations::ReturnMatchingInstances("ABC123");
   if(result2.has_value())
   {
     std::cout<<"Matching instance found"<<"\n";

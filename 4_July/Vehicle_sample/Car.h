@@ -2,7 +2,7 @@
 class Car
 {
 private:
-    std::string m_id{""};
+    std::string m_id{0};
     float m_price{0.0f};
     unsigned int m_seat_count{0};
 
@@ -22,12 +22,7 @@ public:
 
     unsigned int seatCount() const { return m_seat_count; }
 
-    friend std::ostream &operator<<(std::ostream &os, const Car &rhs) {
-        os << "m_id: " << rhs.m_id
-           << " m_price: " << rhs.m_price
-           << " m_seat_count: " << rhs.m_seat_count;
-        return os;
-    }
+    friend std::ostream &operator<<(std::ostream &os, const Car &rhs) ;
     
 };
 

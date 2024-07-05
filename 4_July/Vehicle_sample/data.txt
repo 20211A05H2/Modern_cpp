@@ -1,0 +1,30 @@
+
+grep is used to search the words
+ex:grep -E  "^A" -gives u words with start of letter A 
+
+^-start of a line
+$-end of a line\d a digit
+[]-a charactor set
+   [a-z]set of lowercase alphabets
+   [0-9]set of digits from 0 to 9
+   [!@#]set of 3 charectors ! @ or #
+* -0 or more of the previous token
+         a*:0 or more occurances of a 
+         9*:0 or more occurances of 9
+?-1 or 0 occurances of something
+  [0-9]?:0 or more occurances of a number in the set of 0 to 9
+
++-1 or more occurences of something 
+    h+:1 or more occurances of continuos "h" character
+    \d+:1 or more occurances of continuos digits
+
+{}-how many times previous thing must occurances
+    a{3} precisely 3 occurances of continuos 0
+    a{3,}precisely 3 or more occurances of continuos 0
+    a{3,7}precisely 3,4,5,6 or 7 occurances of continuos 0
+
+
+
+finding mails of kpitians
+
+grep -E "^[a-z]+\.[a-z]+[0-9]*@kpit\.com\$"  filename.txt

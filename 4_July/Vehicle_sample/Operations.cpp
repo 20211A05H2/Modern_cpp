@@ -1,8 +1,9 @@
 #include "Operations.h"
 
- static std::mutex mt{};
-    static DataContainer m_data{};
-    static ThreadContainer m_threads{};
+
+  std::mutex Operations::mt{};
+     DataContainer  Operations::m_data{};
+    ThreadContainer Operations::m_threads{};
 void Operations::CreateCarsandBikes()
 {
     m_data.emplace_back(new Car("xyz123", 3434334.43f, 6));
@@ -16,7 +17,7 @@ void Operations::FindAverageCost()
     if (m_data.empty())
     {
         mt.lock();
-        std::cerr << "Empty";
+        std::cerr << "Empty data container";
         mt.unlock();
     }
     float total{0.0f};
@@ -38,16 +39,16 @@ std::optional<vrType> Operations::ReturnMatchingInstances(std::string sid)
     if (m_data.empty())
     {
         mt.lock();
-        std::cout << "Empty data container";
+        std::cerr << "Empty data container";
         mt.unlock();
     }
 
-    std::optional<unsigned int>result{std::nullptr};
+    std::optional<vrType>result{std::nullopt};
     bool m_id_found{false};
 
     for (const vrType v : m_data)
     {
-        std::visit([](auto &&val)
+        std::visit([&](auto &&val)
         {
             if(val->id()==sid)
             {
@@ -55,11 +56,12 @@ std::optional<vrType> Operations::ReturnMatchingInstances(std::string sid)
                 m_id_found=true;
             } 
         }, v);
-    }
-    if (m_id_found)
+         if (m_id_found)
     {
-        return result;
+        break;
     }
+    }
+   
     return result;
 }
 
@@ -86,10 +88,10 @@ std::optional<unsigned int> Operations::FindSeatCountbyId(std::string sid)
     if (m_data.empty())
     {
         mt.lock();
-        std::cout << "Empty dat container:" << "\n";
+        std::cerr << "Empty data container:" << "\n";
         mt.unlock();
     }
-    std::optional<unsigned int> result {std::nullptr};
+    std::optional<unsigned int> result {std::nullopt};
     bool matchfound{false};
     for (const vrType v : m_data)
     {
@@ -103,6 +105,10 @@ std::optional<unsigned int> Operations::FindSeatCountbyId(std::string sid)
             }
         }
     }
+    if(!matchfound && (m_data.empty()))
+    {
+        std::cerr<<"Id not found\n";
+    }
 
     return result;
 }
@@ -112,7 +118,7 @@ void Operations::Deallocate()
     if (m_data.empty())
     {
         mt.lock();
-        std::cout << "Total cost is:" << "\n";
+        std::cerr<< "Data container is empty:" << "\n";
         mt.unlock();
     }
     for (const vrType v : m_data)

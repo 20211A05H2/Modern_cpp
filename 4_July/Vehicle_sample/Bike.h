@@ -1,11 +1,12 @@
+#ifndef BIKE_H
+#define BIKE_H
+
 #include <iostream>
 class Bike
 {
 private:
     std::string m_id{""};
     float m_price{0.0f};
-    
-
 public:
     float InsuranceAmout() ;
 
@@ -22,12 +23,10 @@ public:
     float price() const { return m_price; }
 
 
-    friend std::ostream &operator<<(std::ostream &os, const Bike &rhs) {
-        os << "m_id: " << rhs.m_id
-           << " m_price: " << rhs.m_price;
-        return os;
-    }
+    friend std::ostream &operator<<(std::ostream &os, const Bike &rhs);
     
 };
 
 
+
+#endif // BIKE_H
