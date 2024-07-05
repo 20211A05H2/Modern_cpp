@@ -1,0 +1,14 @@
+C++--->compiler--->gcc(g++)
+   --->clangd
+   -Intellisense/<some-other-name>:compare realtime and ask advice
+          copy error msg
+          breakout in 3 parts
+
+
+ERRORS
+   1.undefined identifier
+      -spelling/type mistake
+      -issue with incorrect protocal of a scope of a variable
+          i.e: not following the scope of the variable
+   
+   2.No Matching call
