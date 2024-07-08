@@ -19,12 +19,13 @@
 #include<iostream>
 #include<vector>
 #include<functional>
+#include<thread>
 using Operations=std::function<void(int number)>;
 void Adaptor(Operations fn,const std::vector<int>& data)
 {
     for(int val:data)
     {
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::this_thread::sleep_for(std::chrono::seconds(5));
         fn(val);
     }
 }
