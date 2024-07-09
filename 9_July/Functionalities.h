@@ -1,0 +1,6 @@
+#ifndef FUNCTIONALITIES_H
+#define FUNCTIONALITIES_H
+
+CreateObjects()
+
+#endif // FUNCTIONALITIES_H
